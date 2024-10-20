@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trek Maharashtra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f5ef; /* Light green background */
+            color: #333;
+            animation: fadeIn 1s; /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background: linear-gradient(rgba(76, 175, 80, 0.8), rgba(76, 175, 80, 0.8)), url('assets/images/header-background.jpg') no-repeat center center; /* Header gradient */
+            background-size: cover;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e0f7fa; /* Light color on hover */
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px; /* Adjust as needed for spacing */
+            background-color: #f44336; /* Red color for logout */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f; /* Darker red on hover */
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .trek-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .trek-option {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .trek-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .trek-option img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .trek-option h3 {
+            margin: 15px;
+            color: #388e3c; /* Dark green */
+        }
+
+        .trek-option p {
+            margin: 15px;
+        }
+
+        .book-form {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-form label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .book-form input,
+        .book-form select {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; /* Full width */
+        }
+
+        .book-form button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .book-form button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #4caf50; /* Green footer */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .trek-option img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Trek Maharashtra</h1>
+    <button class="logout-button" onclick="logout()">Logout</button>
+</header>
+
+<div class="hero">
+    <h1>Explore the Beauty of Maharashtra!</h1>
+    <p>Join us for unforgettable trekking experiences across the stunning landscapes of Maharashtra.</p>
+</div>
+
+<div class="container">
+    <h2>Trekking Plans</h2>
+    <div class="trek-options">
+        <div class="trek-option">
+            <img src="assets/images/sinhagad-fort.jpg" alt="Sinhagad Fort">
+            <h3>Sinhagad Fort</h3>
+            <p><strong>Duration:</strong> 1 Day</p>
+            <p><strong>Price:</strong> ₹500</p>
+            <p>Experience the historic fort and enjoy stunning views.</p>
+        </div>
+
+        <div class="trek-option">
+            <img src="assets/images/rajmachi.jpg" alt="Rajmachi">
+            <h3>Rajmachi</h3>
+            <p><strong>Duration:</strong> 2 Days</p>
+            <p><strong>Price:</strong> ₹1500</p>
+            <p>A beautiful trek through lush forests and ancient ruins.</p>
+        </div>
+
+        <div class="trek-option">
+            <img src="assets/images/kalsubai.jpg" alt="Kalsubai">
+            <h3>Kalsubai</h3>
+            <p><strong>Duration:</strong> 1 Day</p>
+            <p><strong>Price:</strong> ₹700</p>
+            <p>Climb the highest peak in Maharashtra for breathtaking views.</p>
+        </div>
+
+        <div class="trek-option">
+            <img src="assets/images/harishcandragad.jpg" alt="Harishchandragad">
+            <h3>Harishchandragad</h3>
+            <p><strong>Duration:</strong> 2 Days</p>
+            <p><strong>Price:</strong> ₹1800</p>
+            <p>Explore ancient caves and enjoy scenic landscapes.</p>
+        </div>
+
+        <div class="trek-option">
+            <img src="assets/images/mahabaleshwar.jpg" alt="Mahabaleshwar">
+            <h3>Mahabaleshwar</h3>
+            <p><strong>Duration:</strong> 3 Days</p>
+            <p><strong>Price:</strong> ₹2500</p>
+            <p>Experience the beauty of Western Ghats with amazing views.</p>
+        </div>
+
+        <div class="trek-option">
+            <img src="assets/images/chikhaldhara.jpg" alt="Chikhaldara">
+            <h3>Chikhaldara</h3>
+            <p><strong>Duration:</strong> 1 Day</p>
+            <p><strong>Price:</strong> ₹600</p>
+            <p>A serene trekking experience in the Melghat region.</p>
+        </div>
+    </div>
+
+    <h2>Book Your Trek</h2>
+    <form class="book-form" id="bookingForm" method="POST" action="book_trek.php">
+        <label for="trekSelect">Select Trek:</label>
+        <select id="trekSelect" name="trek_name" required>
+            <option value="">--Select a Trek--</option>
+            <option value="Sinhagad Fort">Sinhagad Fort</option>
+            <option value="Rajmachi">Rajmachi</option>
+            <option value="Kalsubai">Kalsubai</option>
+            <option value="Harishchandragad">Harishchandragad</option>
+            <option value="Mahabaleshwar">Mahabaleshwar</option>
+            <option value="Chikhaldara">Chikhaldara</option>
+        </select>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="customer_name" required>
+
+        <label for="mobile_no">Mobile Number:</label>
+        <input type="text" id="mobile_no" name="mobile_no" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number">
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="booking_date" required>
+
+        <button type="submit">Book Now</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Trek Maharashtra. All Rights Reserved.</p>
+    <div class="contact-info">
+        <p>Contact us: support@trekmaharashtra.com</p>
+    </div>
+</footer>
+
+<script>
+    function logout() {
+        // Redirect to the index page
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
+
